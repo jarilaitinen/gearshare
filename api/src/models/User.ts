@@ -9,18 +9,27 @@ export type UserDocument = Document & {
 }
 
 const userSchema = new mongoose.Schema({
-    username: String,
+    username: {
+        type: String,
+        required: true,
+        index: true,
+        unique: true
+      },
     email: {
       type: String,
       required: true,
-      index: true,
+      unique: true
     },
     role: {
       type: String,
       required: true,
       default: 'user',
     }
-  })
+})
+
+userSchema.index(
+    { username: 'text'},
+  )
   
 export default mongoose.model('User', userSchema)
   

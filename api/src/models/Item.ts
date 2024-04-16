@@ -2,9 +2,9 @@ import mongoose, { Document } from 'mongoose'
 
 export type ItemDocument = Document & {
   name: string
-  description?: string | undefined
+  description?: string | null | undefined
   status: string
-  location: string
+  location?: string | null | undefined
   categories: string[]
 }
 

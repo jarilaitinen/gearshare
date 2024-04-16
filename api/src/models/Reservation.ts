@@ -2,11 +2,11 @@ import mongoose, { Document } from 'mongoose'
 
 export type ReservationDocument = Document & {
   items: mongoose.Types.ObjectId[]
-  notes?: string | undefined
+  notes?: string | null | undefined
   status: string
-  borrowerId?: mongoose.Types.ObjectId | string | undefined
-  borrowDate?: Date | undefined
-  returnDate?: Date | undefined
+  borrowerId: mongoose.Types.ObjectId | undefined
+  borrowDate?: Date | null | undefined
+  returnDate?: Date | null | undefined
 }
 
 const reservationSchema = new mongoose.Schema({
@@ -27,6 +27,7 @@ const reservationSchema = new mongoose.Schema({
   borrowerId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
+    required: true,
   },
   borrowDate: {
     type: Date,
