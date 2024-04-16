@@ -1,0 +1,14 @@
+{
+  "name": "gearshare-api",
+  "version": "1.0.0",
+  "description": "rest api for gearshare app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "jarilaitinen",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
